@@ -5,12 +5,15 @@ const dotenv = require("dotenv");
 const authRoute = require("./routes/auth");
 const movieRoute = require("./routes/movie");
 const bodyParser = require("body-parser");
+const cors = require("cors");
 const portNum = process.env.PORT || 5000;
 const options = {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 };
 
+// Cors middleware
+app.use(cors());
 //Body parser
 //app.use(express.urlencoded({extended: false}));
 app.use(bodyParser.json());
